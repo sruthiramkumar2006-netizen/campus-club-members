@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Club Members</title>
+</head>
+<body>
+    <h2>Campus Club Members</h2>
+
+    <h3>Add Member</h3>
+    <form action="/members/add" method="POST">
+        <input name="memberId" placeholder="Member ID" required>
+        <input name="name" placeholder="Name" required>
+        <input name="club" placeholder="Club Name" required>
+        <input name="year" type="number" placeholder="Year of Study" required>
+        <input name="role" placeholder="Role" required>
+        <input name="points" type="number" placeholder="Points" required>
+        <input name="interests" placeholder="Interests (comma separated)">
+        <input name="status" placeholder="Status" value="Active" required>
+        <button>Add Member</button>
+    </form>
+
+    <h3>Search Club and Minimum Points</h3>
+    <form action="/members/search" method="POST">
+        <input name="club" placeholder="Club Name" required>
+        <input name="points" type="number" placeholder="More than points" required>
+        <button>Search</button>
+    </form>
+
+    <h3>Find by Member ID</h3>
+    <form action="/members/find" method="POST">
+        <input name="memberId" placeholder="Member ID" required>
+        <button>Find</button>
+    </form>
+
+    <h3>Display Selected Fields</h3>
+    <form action="/members/project" method="POST">
+        <button>Show Name, Club, Role and Points</button>
+    </form>
+
+    <h3>Update Role and Points</h3>
+    <form action="/members/update" method="POST">
+        <input name="memberId" placeholder="Member ID" required>
+        <input name="role" placeholder="New Role" required>
+        <input name="points" type="number" placeholder="New Points" required>
+        <button>Update</button>
+    </form>
+
+    <h3>Increase Points for a Club</h3>
+    <form action="/members/increase" method="POST">
+        <input name="club" placeholder="Club Name" required>
+        <input name="points" type="number" placeholder="Points to Add" required>
+        <button>Increase Points</button>
+    </form>
+
+    <h3>Search Points Range</h3>
+    <form action="/members/range" method="POST">
+        <input name="min" type="number" placeholder="Minimum Points" required>
+        <input name="max" type="number" placeholder="Maximum Points" required>
+        <button>Search Range</button>
+    </form>
+
+    <h3>Delete Member</h3>
+    <form action="/members/delete" method="POST">
+        <input name="memberId" placeholder="Member ID" required>
+        <button>Delete</button>
+    </form>
+
+    <h3>All Remaining Members (Points Descending)</h3>
+    <form action="/members/all" method="POST">
+        <button>Display All Members</button>
+    </form>
+</body>
+</html>
